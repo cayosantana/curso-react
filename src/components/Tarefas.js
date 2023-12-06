@@ -1,7 +1,11 @@
 import React from "react";
+import Item from "./Item";
 
-const Tarefas = () => {
-    return <h1>Tarefas</h1>
+
+const Tarefas = ({tarefas}) => {
+    return <div>
+        {tarefas.map(item => <Item item={item}></Item>)}
+    </div>
 }
 
 export default Tarefas;
