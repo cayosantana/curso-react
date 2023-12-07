@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { useState } from "react";
 import Tarefas from "./components/Tarefas";
+import AddItem from "./components/AddItem";
 
 const App = () => {
   const [tarefas, setTarefas] = useState([
@@ -19,6 +20,7 @@ const App = () => {
   return (
     <div>
       <div className="container">
+        <AddItem></AddItem>
         <Tarefas tarefas = {tarefas}></Tarefas>
       </div>
     </div>
