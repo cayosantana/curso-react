@@ -1,7 +1,7 @@
 import React from 'react';
 import './Item.css'
 
-const Item = ({item}) => {
+const Item = ({item, handleTarefas}) => {
     return ( <div className='item-container'>
         {item.title}
         

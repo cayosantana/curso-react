@@ -19,6 +19,13 @@ const App = () => {
       completed: true,
     }
   ])
+  const handleTarefasClick = (tarefasId) => {
+      const novaTarefas = tarefas.map((tarefas) => {
+        if (tarefas.id === tarefasId) return {...tarefas, completed: !tarefas.completed}
+        return tarefas
+      })
+      setTarefas(novaTarefas)
+  }
   const handleTarefasAdd = (tarefasTitle) => {
     const novaTarefas = [...tarefas, {
         title: tarefasTitle,
@@ -32,7 +39,7 @@ const App = () => {
     <div>
       <div className="container">
         <AddItem handleTarefasAdd = {handleTarefasAdd}></AddItem>
-        <Tarefas tarefas = {tarefas}></Tarefas>
+        <Tarefas tarefas = {tarefas} handleTarefasClick = {handleTarefasClick}></Tarefas>
       </div>
     </div>
   )
