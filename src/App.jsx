@@ -35,11 +35,16 @@ const App = () => {
   ]
   setTarefas(novaTarefas)
   }
+  const handleTarefasDelet = (tarefasId) => {
+      const novaTarefas = tarefas.filter(tarefas => tarefas.id !== tarefasId)
+
+      setTarefas(novaTarefas)
+  }
   return (
     <div>
       <div className="container">
         <AddItem handleTarefasAdd = {handleTarefasAdd}></AddItem>
-        <Tarefas tarefas = {tarefas} handleTarefasClick = {handleTarefasClick}></Tarefas>
+        <Tarefas tarefas = {tarefas} handleTarefasClick = {handleTarefasClick} handleTarefasDelet = {handleTarefasDelet}></Tarefas>
       </div>
     </div>
   )
