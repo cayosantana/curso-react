@@ -4,6 +4,8 @@ import { useState } from "react";
 import Tarefas from "./components/Tarefas";
 import AddItem from "./components/AddItem";
 import {v4 as uuidv4} from 'uuid'
+import Titulo from "./components/Titulo";
+
 
 
 const App = () => {
@@ -43,6 +45,7 @@ const App = () => {
   return (
     <div>
       <div className="container">
+        <Titulo></Titulo>
         <AddItem handleTarefasAdd = {handleTarefasAdd}></AddItem>
         <Tarefas tarefas = {tarefas} handleTarefasClick = {handleTarefasClick} handleTarefasDelet = {handleTarefasDelet}></Tarefas>
       </div>
