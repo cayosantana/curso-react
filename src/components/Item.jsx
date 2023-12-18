@@ -1,6 +1,6 @@
 import React from 'react';
 import './Item.css'
-import {CgClose} from 'react-icons/cg'
+import {CgClose, CgInfo} from 'react-icons/cg'
 
 const Item = ({item, handleTarefasClick, handleTarefasDelet}) => {
     return ( 
@@ -11,6 +11,9 @@ const Item = ({item, handleTarefasClick, handleTarefasDelet}) => {
             <div className='button-container'>
                 <button className='button-remove' onClick={() => handleTarefasDelet(item.id)}>
                     <CgClose></CgClose>
+                </button>
+                <button className='button-details' >
+                    <CgInfo></CgInfo>
                 </button>
             </div>
         </div>

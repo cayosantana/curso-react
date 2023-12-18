@@ -5,8 +5,8 @@ import Tarefas from "./components/Tarefas";
 import AddItem from "./components/AddItem";
 import {v4 as uuidv4} from 'uuid'
 import Titulo from "./components/Titulo";
-
-
+import { BrowserRouter, Route } from "react-router-dom";
+import DetailsTarefas from "./components/DetailsTarefas";
 
 const App = () => {
   const [tarefas, setTarefas] = useState([
@@ -43,13 +43,13 @@ const App = () => {
       setTarefas(novaTarefas)
   }
   return (
-    <div>
+    <BrowserRouter>
       <div className="container">
         <Titulo></Titulo>
         <AddItem handleTarefasAdd = {handleTarefasAdd}></AddItem>
         <Tarefas tarefas = {tarefas} handleTarefasClick = {handleTarefasClick} handleTarefasDelet = {handleTarefasDelet}></Tarefas>
       </div>
-    </div>
+    </BrowserRouter>
   )
 }
 
