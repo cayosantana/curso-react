@@ -5,7 +5,7 @@ import Tarefas from "./components/Tarefas";
 import AddItem from "./components/AddItem";
 import {v4 as uuidv4} from 'uuid'
 import Titulo from "./components/Titulo";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DetailsTarefas from "./components/DetailsTarefas";
 
 const App = () => {
@@ -47,7 +47,10 @@ const App = () => {
       <div className="container">
         <Titulo></Titulo>
         <AddItem handleTarefasAdd = {handleTarefasAdd}></AddItem>
-        <Tarefas tarefas = {tarefas} handleTarefasClick ={handleTarefasClick} handleTarefasDelet = {handleTarefasDelet}></Tarefas> 
+        <Tarefas tarefas = {tarefas} handleTarefasClick = {handleTarefasClick} handleTarefasDelet = {handleTarefasDelet}></Tarefas>
+        <Routes>
+          <Route path="/:tarefasTitle" element={DetailsTarefas}/>
+        </Routes>
       </div> 
     </Router>
   )
